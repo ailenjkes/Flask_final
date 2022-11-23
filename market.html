@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+  Market Page
+{% endblock %}
+
+{% block content %}
+      <div class="container">
+          <h1>ITEMS...</h1>
+          <br/>
+          <form action="/market" METHOD="POST">
+              <input type="text" placeholder="Name of Item" name="name">
+              <input type="submit" value="Add Item" class="btn-secondary">
+               <input type="text" autofocus="autofocus" name="search_string">
+              <input type="submit" formaction="/search" value="Search Item">
+          </form>
+          <br></br>
+          {% for item in items %}
+           <h4>
+               {{ item.name }}
+           </h4>
+          {% endfor %}
+      </div>
+{% endblock %}
